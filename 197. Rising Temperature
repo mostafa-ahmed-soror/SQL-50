@@ -1,0 +1,14 @@
+SELECT
+id
+FROM
+(
+    Select 
+        id,
+        temperature,
+        LAG(temperature) OVER(ORDER BY recordDate) AS Prev_Temp,
+        DateDiff(DAY, LAG(recordDate) OVER(ORDER BY RecordDate), recordDate) AS Date_Diff
+    FROM Weather
+) AS Temp_Comp
+    WHERE Date_Diff =1
+    AND
+    temperature > Prev_Temp;
