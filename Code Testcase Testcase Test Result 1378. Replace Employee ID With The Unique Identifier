@@ -1,0 +1,6 @@
+SELECT
+name,
+unique_id
+FROM EmployeeUNI eu
+Right Join Employees e
+ON e.id=eu.id
