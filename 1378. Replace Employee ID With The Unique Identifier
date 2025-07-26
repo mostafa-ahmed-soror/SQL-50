@@ -1,6 +1,7 @@
 SELECT
-name,
-unique_id
-FROM EmployeeUNI eu
-Right Join Employees e
+    unique_id,
+name
+from Employees e
+left JOIN
+EmployeeUNI eu
 ON e.id=eu.id
