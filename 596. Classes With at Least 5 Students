@@ -1,0 +1,5 @@
+SELECT 
+    Class
+from Courses
+GROUP BY class
+having count(*) >= 5
